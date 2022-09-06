@@ -1,0 +1,46 @@
+float $baseW = 9;
+float $baseH = 5;
+float $baseDepth = 4;
+float $circH = 3;
+float $signW = 7;
+float $doorH = 2;
+float $doorD = .5;
+float $doorW = 1;
+
+//Base building
+polyCube -width $baseW -height $baseH -depth $baseDepth -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 2.5 0 ;
+
+//Ring
+polySphere -radius 1 -subdivisionsX 10 -subdivisionsY 10 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 ($baseH + $circH) 0 ;
+
+polySphere -radius 1 -subdivisionsX 10 -subdivisionsY 10 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 $baseH 0 ;
+
+polyTorus -radius 1 -sectionRadius 0.5 -twist 0 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 1 -constructionHistory 1;
+rotate -relative -objectSpace -forceOrderXYZ -89.422823 0 0 ;
+move -relative -objectSpace -worldSpaceDistance 0 0 ($baseH + 2) ;
+
+//Frontal sign
+polyCube -width $signW -height 1 -depth 1 -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 ($baseH - 1) ($baseDepth / 2);
+
+//doors
+polyCube -width $doorW -height $doorH -depth $doorD -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 ($doorH - 1) ($baseDepth / 2);
+//2nd door
+polyCube -width $doorW -height $doorH -depth $doorD -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 ($doorH - 1) (-$baseDepth / 2);
+
+//post
+polyCube -width ($doorW /2) -height ($doorH * 2) -depth $doorD -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance  -1.530615 2 2;
+
+polyCube -width ($doorW /2) -height ($doorH * 2) -depth $doorD -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance  1.530615 2 2;
+
+//border
+polyCube -width ($baseW + .5) -height 1 -depth ($baseDepth + .5) -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
+
+

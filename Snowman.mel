@@ -1,0 +1,63 @@
+//First Sphere Size
+polySphere -radius 3 -subdivisionsX 10 -subdivisionsY 10 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+//move Sphere#1
+move -relative -objectSpace -worldSpaceDistance - 0 3 0 ;
+
+polySphere -radius 3 -subdivisionsX 10 -subdivisionsY 10 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+polySphere -edit -radius 2;
+//move second Sphere
+move -relative -objectSpace -worldSpaceDistance -r 0 6.66938 0 ;
+
+//third sphere
+polySphere -radius 1.5 -subdivisionsX 10 -subdivisionsY 10 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+//move
+move -relative -objectSpace -worldSpaceDistance - 0 9.07765 0 ;
+
+//eye
+polySphere -radius 1 -subdivisionsX 10 -subdivisionsY 10 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0.348923 9.490705 0.85738 ;
+scale -relative 0.611907 0.611907 0.611907 ;
+rotate -r -os -fo -21.296791 0 0 ;
+rotate -r -os -fo 6.665333 0 0 ;
+scale -relative -pivot 0.39238cm 9.625354cm 0.546003cm 0.593544 0.593544 0.593544 ;
+isolateSelect -state 0 modelPanel3;
+
+//nose
+polyCone -radius 1 -height 2 -subdivisionsX 20 -subdivisionsY 1 -subdivisionsZ 0 -axis 0 1 0 -roundCap 0 -createUVs 3 -constructionHistory 1;
+rotate -r -os -fo 89.375637 0 0 ;
+move -relative 0 9.233218 0 ;
+move -relative 0 0 1.407047 ;
+move -relative -0.0254647 0 0 ;
+move -relative 0 -0.331041 0 ;
+scale -relative 1 1.977778 1 ;
+scale -relative 0.647947 0.647947 0.647947 ;
+
+//hat
+polyCylinder -r 1 -height 2 -subdivisionsX 20 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -roundCap 0 -createUVs 3 -constructionHistory 1;
+move -relative 0 10.802615 0 ;
+
+polyCylinder -radius 1 -height 2 -subdivisionsX 20 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -roundCap 0 -createUVs 3 -constructionHistory 1;
+move -relative 0 9.454498 0 ;
+scale -relative 1.223334 1.223334 1.223334 ;
+scale -relative 1 0.623549 1 ;
+scale -relative 1.198057 1.198057 1.198057 ;
+scale -relative 1 0.223852 1 ;
+move -relative 0 0.47454 0 ;
+
+
+//eyes
+polySphere -radius .2 -subdivisionsX 10 -subdivisionsY 10 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 8.948007 0 ;
+move -relative -objectSpace -worldSpaceDistance -0.589731 0 0 ;
+move -relative -objectSpace -worldSpaceDistance 0 0 1.332055 ;
+move -relative -objectSpace -worldSpaceDistance 0 0.315926 0 ;
+//I don't know how to do this without multiple lines
+
+polySphere -radius .2 -subdivisionsX 10 -subdivisionsY 10 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative -objectSpace -worldSpaceDistance 0 8.584152 0 ;
+move -relative -objectSpace -worldSpaceDistance 0.867942 0 0 ;
+move -relative -objectSpace -worldSpaceDistance 0 0 0.950349 ;
+move -relative -objectSpace -worldSpaceDistance 0 0.632129 0 ;
+move -relative -objectSpace -worldSpaceDistance -0.367524 0 0 ;
+move -relative -objectSpace -worldSpaceDistance 0 0 0.365456 ;
+
