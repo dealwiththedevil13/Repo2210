@@ -1,0 +1,46 @@
+proc GenerateStaircase(float $num, float $StairW, float $StairH, float $StairL, float $StairPiv, float $StepH, float $StepRotate)
+{
+      for($i =0; $i<$num; $i++)
+    {
+        polyCube -width $StairW -height $StairH -d $StairL -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -constructionHistory 1;
+        move -relative 0 $i -$StepH ;
+        xform -worldSpace -rotatePivot 0 $StairPiv 0;
+        //Without multiplying the $i the code doesn't work. I don't understand why though!!
+        rotate -r -os 0 ($i * $StepRotate) 0 ;
+    };
+    //The semicolon is a needed piece.
+
+}
+GenerateStaircase(20,3, 1, 6, 0, 3, 24);
+
+//If you don't suceed at first try and try again!
+
+
+/*All my errors
+
+proc GenerateStaircase(int $num, int $wid, int $heightS, int $depS, int $pivotS, int $stepH, int $rotateStep;)
+{
+    // $i = the first stair
+    for($i = 0; $i<=$num; $i++2)
+    {
+        polyCube -width $widS -height $heightS -depth $LengS -subdivisionsX 1 -subdivisionsY 1 -subdivisionsZ 1 -axis 0 1 0 -createUVs 4 -constructionHistory 1;
+        xform -translation $pivotS, .5 /2 , 0;
+        move 0, $stepH, 0;
+        rotate 0,($i * $rotateStep ) ,0;
+
+    }
+}
+GenerateStaircase(30, 2, .5, 1, 2.5,6,4);
+
+proc GenerateStaircase( int $i, float $num, float $StairW, float $StairH, float $StairL, float $StairPiv; float $StepH; float $StepRotate;)
+{
+    if($i =0; $i<=$num; $i++)
+    {
+        polyCube -w $StairW -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+        move -r 0 $i -4 ;
+        xform -worldSpace -rotatePivot 0 0 0;
+        rotate -r -os 0 ($i*15) 0 ;
+    }
+
+}*/
+
