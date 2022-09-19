@@ -8,7 +8,7 @@ proc GenerateStaircase(float $num, float $StairW, float $StairH, float $StairL, 
         //Without multiplying the $i the code doesn't work. I don't understand why though!!
         rotate -r -os 0 ($i * $StepRotate) 0 ;
     };
-    //The semicolon is a needed piece.
+    //The semicolon is needed."Don't Forget it".
 
 }
 GenerateStaircase(20,3, 1, 6, 0, 3, 24);
