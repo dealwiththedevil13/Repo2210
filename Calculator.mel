@@ -1,0 +1,95 @@
+proc string Addition()
+{
+    int $values[];
+    for($i =0; $i < 6; $i ++ )
+    {
+        int $num = 'rand 100';
+        $values[size($values)] = $num;
+    }
+
+    int $values[];
+    for($i =0; $i < 6; $i ++ )
+    {
+        int $num2 = 'rand 100';
+        $values[size($values)] = $num2;
+    }
+
+     $num + [size($num2)] = $ans;
+     
+}
+Addition();
+//Honestly I really don't get this. I just don't understand how to get it to work. I am pretty sure Im overthinking it but I just don't know.
+proc Subtract()
+{
+     int $values[];
+    for($i =0; $i < 6; $i ++ )
+    {
+        int $num = 'rand 100';
+        $values[size($values)] = $num;
+    }
+
+    for($i =0; $i < 6; $i ++ )
+    {
+        int $num2 = 'rand 100';
+        $values[size($values)] = $num2;
+    }
+
+    $num [size($num2)] = $ans;
+
+}
+proc Division()
+{
+
+}
+proc Multiplication()
+{
+
+}
+proc Power()
+{
+
+}
+proc Mean()
+{
+
+}
+proc Median()
+{
+
+}
+
+proc calculator()
+{
+    if($operation = 0)
+    {
+        print("The sum of" + $num + $num2 "is" $ans );
+    }
+    else if($operation = 1)
+    {
+        print("The difference of" + + + "is" );
+    }
+    else if($operation = 2)
+    {
+        print("The multiplication of" + + + "is" );
+    }
+    else if($operation = 3)
+    {
+        print( "The Division of" + + + "is");
+    }
+    else if($operation = 4)
+    {
+        print(  +"to the power of"+ + "is" );
+    }
+    else if($operation = 5)
+    {
+        print();
+    }
+    else if($operation = 6)
+    {
+        print();
+    }
+    else
+    {
+        print("Please put in valid operation type as a value, 0-7");
+    }
+}
