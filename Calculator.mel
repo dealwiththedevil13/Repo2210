@@ -1,95 +1,113 @@
-proc string Addition()
+global proc float Addition(float $num[])
 {
-    int $values[];
-    for($i =0; $i < 6; $i ++ )
-    {
-        int $num = 'rand 100';
-        $values[size($values)] = $num;
-    }
+    float $sum = 0;
 
-    int $values[];
-    for($i =0; $i < 6; $i ++ )
+    for($i = 0; $i < 20; $i ++)
     {
-        int $num2 = 'rand 100';
-        $values[size($values)] = $num2;
+        $sum += $num[$i];
     }
-
-     $num + [size($num2)] = $ans;
-     
+    return $sum;
 }
-Addition();
+
 //Honestly I really don't get this. I just don't understand how to get it to work. I am pretty sure Im overthinking it but I just don't know.
-proc Subtract()
+global proc float Subtract(float $num[])
 {
-     int $values[];
-    for($i =0; $i < 6; $i ++ )
+    float $dif = $num[0];
+    for($i=1; $i < size($num); $i ++)
     {
-        int $num = 'rand 100';
-        $values[size($values)] = $num;
+        $dif -= $num[$i];
     }
+    return $dif;
 
-    for($i =0; $i < 6; $i ++ )
+}
+global proc float Division(float $num[])
+{
+     float $div = $num[0];
+    for($i=1; $i < size($num); $i ++)
     {
-        int $num2 = 'rand 100';
-        $values[size($values)] = $num2;
+        $div /= $num[$i];
     }
+    return $div;
+}
+global proc float Multiplication(float $num[])
+{
+     float $multi = $num[0];
+    for($i=1; $i < size($num); $i ++)
+    {
+        $multi *= $num[$i];
+    }
+    return $multi;
+}
+global proc float Power(float $num[])
+{
+ float $pow = $num[0];
+    for($i=1; $i < size($num); $i ++)
+    {
+        $pow ^= $num[$i];
+    }
+    return $pow;
+}
+global proc float Mean(float $num[])
+{
+    float $sum = 0;
+    float $mean;
 
-    $num [size($num2)] = $ans;
+    for($i = 0; $i < 20; $i ++)
+    {
+        $sum += $num[$i];
+    }
+   int $div = intArrayCount(2,63,5,12);
+    $mean = $sum / $div;
+    return $mean;
+// not right just yet.
 
 }
-proc Division()
+global proc float Median(float $num[])
 {
-
-}
-proc Multiplication()
-{
-
-}
-proc Power()
-{
-
-}
-proc Mean()
-{
-
-}
-proc Median()
-{
-
+//I still don't know what to do with this. I just don't get how to select something from the middle.
 }
 
-proc calculator()
+global proc float calculator(float $Input[], int $operation)
 {
+    float $result;
+    string $operationSymb;
+
     if($operation = 0)
     {
-        print("The sum of" + $num + $num2 "is" $ans );
+        $result = Addition($Input);
+        $operationSymb = "+";
     }
     else if($operation = 1)
     {
-        print("The difference of" + + + "is" );
+       $result = Subtract($Input);
+        $operationSymb = "-";
     }
     else if($operation = 2)
     {
-        print("The multiplication of" + + + "is" );
+         $result = Division($Input);
+        $operationSymb = "/";
     }
     else if($operation = 3)
     {
-        print( "The Division of" + + + "is");
+         $result = Multiplication($Input);
+        $operationSymb = "+";
     }
     else if($operation = 4)
     {
-        print(  +"to the power of"+ + "is" );
+         $result = Power($Input);
+        $operationSymb = "^";
     }
     else if($operation = 5)
     {
-        print();
+        $result = Mean($Input);
     }
     else if($operation = 6)
     {
-        print();
+        $result = Median($Input);
     }
     else
     {
         print("Please put in valid operation type as a value, 0-7");
     }
 }
+calculator({2,63,5,12}, 1);
