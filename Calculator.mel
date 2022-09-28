@@ -2,7 +2,7 @@ global proc float Addition(float $num[])
 {
     float $sum = 0;
 
-    for($i = 0; $i < 20; $i ++)
+    for($i = 0; $i < size($num); $i ++)
     {
         $sum += $num[$i];
     }
@@ -20,6 +20,7 @@ global proc float Subtract(float $num[])
     return $dif;
 
 }
+
 global proc float Division(float $num[])
 {
      float $div = $num[0];
@@ -29,6 +30,7 @@ global proc float Division(float $num[])
     }
     return $div;
 }
+
 global proc float Multiplication(float $num[])
 {
      float $multi = $num[0];
@@ -38,34 +40,33 @@ global proc float Multiplication(float $num[])
     }
     return $multi;
 }
+
 global proc float Power(float $num[])
 {
- float $pow = $num[0];
-    for($i=1; $i < size($num); $i ++)
-    {
-        $pow ^= $num[$i];
-    }
-    return $pow;
+    pow $num[0] $num[1];
+
+    return`pow $num[0] $num[1]`;
 }
+
 global proc float Mean(float $num[])
 {
-    float $sum = 0;
+    float $sum = $num[0];
     float $mean;
 
-    for($i = 0; $i < 20; $i ++)
+    for($i = 1; $i < size($num); $i ++)
     {
         $sum += $num[$i];
     }
-   int $div = intArrayCount(2,63,5,12);
-    $mean = $sum / $div;
+
+    $mean = $sum /= size($num);
     return $mean;
 // not right just yet.
 
 }
-global proc float Median(float $num[])
+/*global proc float Median(float $num[])
 {
 //I still don't know what to do with this. I just don't get how to select something from the middle.
-}
+}*/
 
 global proc float calculator(float $Input[], int $operation)
 {
@@ -76,34 +77,41 @@ global proc float calculator(float $Input[], int $operation)
     {
         $result = Addition($Input);
         $operationSymb = "+";
+        return $result;
     }
     else if($operation = 1)
     {
        $result = Subtract($Input);
         $operationSymb = "-";
+        return $result;
     }
     else if($operation = 2)
     {
          $result = Division($Input);
         $operationSymb = "/";
+        return $result;
     }
     else if($operation = 3)
     {
          $result = Multiplication($Input);
         $operationSymb = "+";
+        return $result;
     }
     else if($operation = 4)
     {
          $result = Power($Input);
         $operationSymb = "^";
+        return $result;
     }
     else if($operation = 5)
     {
         $result = Mean($Input);
+        return $result;
     }
     else if($operation = 6)
     {
         $result = Median($Input);
+        return $result;
     }
     else
     {
