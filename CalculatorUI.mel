@@ -1,0 +1,239 @@
+global proc float Addition()
+{
+    string $Num1 = optionVar -q "firstNum";
+    string $Num2 = optionVar -q "secNum";
+    string $Num3 = optionVar -q "thirdNum";
+    string $feild3 = optionVar -q "Result";
+
+    float $value1 = `floatField -q -value $Num1`;
+    float $value1 = `floatField -q -value $Num2`;
+    float $value1 = `floatField -q -value $Num3`;
+
+    float $sum =  $Num1 + $Num2 + $Num3;
+
+    floatField -e -value $sum;
+
+    /*float $sum = 0;
+
+    for($i = 0; $i < size($num); $i ++)
+    {
+        $sum += $num[$i];
+    }
+    return $sum;*/
+}
+
+//Honestly I really don't get this. I just don't understand how to get it to work. I am pretty sure Im overthinking it but I just don't know.
+global proc float Subtract()
+{
+    string $Num1 = optionVar -q "firstNum";
+    string $Num2 = optionVar -q "secNum";
+    string $Num3 = optionVar -q "thirdNum";
+    string $feild3 = optionVar -q "Result";
+
+    float $value1 = `floatField -q -value $Num1`;
+    float $value1 = `floatField -q -value $Num2`;
+    float $value1 = `floatField -q -value $Num3`;
+    
+    float $dif =  $Num1 - $Num2 - $Num3;
+
+    floatField -e -value $dif;
+
+    /*float $dif = $num[0];
+    for($i=1; $i < size($num); $i ++)
+    {
+        $dif -= $num[$i];
+    }
+    return $dif;*/
+
+}
+
+global proc float Division()
+{
+    string $Num1 = optionVar -q "firstNum";
+    string $Num2 = optionVar -q "secNum";
+    string $Num3 = optionVar -q "thirdNum";
+    string $feild3 = optionVar -q "Result";
+
+    float $value1 = `floatField -q -value $Num1`;
+    float $value1 = `floatField -q -value $Num2`;
+    float $value1 = `floatField -q -value $Num3`;
+    
+    float $div =  $Num1 / $Num2 / $Num3;
+
+    floatField -e -value $div;
+    
+    /*float $div = $num[0];
+    for($i=1; $i < size($num); $i ++)
+    {
+        $div /= $num[$i];
+    }
+    return $div;*/
+}
+
+global proc float Multiplication()
+{
+    string $Num1 = optionVar -q "firstNum";
+    string $Num2 = optionVar -q "secNum";
+    string $Num3 = optionVar -q "thirdNum";
+    string $feild3 = optionVar -q "Result";
+
+    float $value1 = `floatField -q -value $Num1`;
+    float $value1 = `floatField -q -value $Num2`;
+    float $value1 = `floatField -q -value $Num3`;
+    
+    float $sum =  $Num1 * $Num2 * $Num3;
+
+    floatField -e -value $sum ;
+
+    /*float $multi = $num[0];
+    for($i=1; $i < size($num); $i ++)
+    {
+        $multi *= $num[$i];
+    }
+    return $multi;*/
+}
+
+global proc float Power(float $num[])
+{
+    pow $num[0] $num[1];
+
+    return`pow $num[0] $num[1]`;
+}
+
+global proc float Mean(float $num[])
+{
+    string $Num1 = optionVar -q "firstNum";
+    string $Num2 = optionVar -q "secNum";
+    string $Num3 = optionVar -q "thirdNum";
+    string $feild3 = optionVar -q "Result";
+
+    float $value1 = `floatField -q -value $Num1`;
+    float $value1 = `floatField -q -value $Num2`;
+    float $value1 = `floatField -q -value $Num3`;
+    
+    float $sum =  $Num1 +  $Num2 +  $Num3;
+
+    $mean = $sum /= 3; 
+
+    floatField -e -value $mean;
+    /*float $sum = $num[0];
+    float $mean;
+
+    for($i = 1; $i < size($num); $i ++)
+    {
+        $sum += $num[$i];
+    }
+
+    $mean = $sum /= size($num);
+    return $mean;*/
+// not right just yet.
+
+}
+/*global proc float Median(float $num[])
+{
+//I still don't know what to do with this. I just don't get how to select something from the middle.
+    $listOfFloats = `sort $listOfFloats`;
+
+
+if (size ==)
+{
+    A = size/2;
+    B = (size/2) - 1;
+    (A+B)/2;
+}
+}*/
+
+global proc float calculator(float $Input[], int $operation)
+{
+    float $result;
+    string $operationSymb;
+
+    if($operation = 1)
+    {
+        $result = Addition($Input);
+        $operationSymb = "+";
+        return $result;
+    }
+    else if($operation = 2)
+    {
+       $result = Subtract($Input);
+        $operationSymb = "-";
+        return $result;
+    }
+    else if($operation = 3)
+    {
+         $result = Division($Input);
+        $operationSymb = "/";
+        return $result;
+    }
+    else if($operation = 4)
+    {
+         $result = Multiplication($Input);
+        $operationSymb = "+";
+        return $result;
+    }
+    else if($operation = 5)
+    {
+         $result = Power($Input);
+        $operationSymb = "^";
+        return $result;
+    }
+    else if($operation = 6)
+    {
+        $result = Mean($Input);
+        return $result;
+    }
+    else if($operation = 7)
+    {
+        $result = Median($Input);
+        return $result;
+    }
+    else
+    {
+        print("Please put in valid operation type as a value, 0-7");
+    }
+}
+//calculator({2,63,5,12}, 1);
+
+global proc Calc_ButtonCmd()
+{
+    string 
+
+
+}
+
+global proc CalculatorUI()
+{
+string $mWindow = "CalcWindow";
+
+if(`window -exists $mWindow`)
+    deleteUI $mWindow;
+
+$mWindow = `window -title "Calculator" 
+                    -widthHeight 300 400
+                    -resizeToFitChildren 1
+                    $mWindow`;
+string $mColumn = `columnLayout  -adjustableColumn 1 
+                                -parent $mWindow`;
+//Input the numbers  for the equations
+optionVar -stringValue "firstNum" `floatField -parent $mColumn`; 
+optionVar -stringValue "secNum" `floatField -parent $mColumn`;
+optionVar -stringValue "thirdNum" `floatField -parent $mColumn`;
+optionVar -stringValue "Result" `floatField -parent $mColumn -editable 0`;
+
+
+//Text bar where the answer will appear
+optionVar -stringValue "CalcResult" `textField -parent $mColumn -editable 0`;
+optionVar -stringValue "Operation" `radioButtonGrp -parent $mColumn -numberOfRadioButtons 4 -labelArray4 "Addition" "Subtraction" "Division" "Multiplication"`;
+//optionVar -stringValue "Operation" `radioButtonGrp -parent $mColumn -numberOfRadioButtons 4 -labelArray4 "Addition" "Subtraction" "Division" "Multiplication"`;
+button -label "Go!" -command "";
+
+
+/*optionVar -stringValue "ftNameField" `textField -parent $mColumn -placeholderText "Enter name here..."`;
+optionVar -stringValue "ftYearField" `intField -parent $mColumn`;
+optionVar -stringValue "ftOperation" `radioButtonGrp -parent $mColumn -numberOfRadioButtons 4 -labelArray4 "Lucky Numbers" "Best Friend" "Fortune Cookie" "Zodiac Sign"`;
+button -parent $mColumn -label "Go!" -command "FT_ButtonCmd";
+optionVar -stringValue "ftResult" `textField -parent $mColumn -editable 0`;*/
+showWindow $mWindow;
+}
+CalculatorUI();
