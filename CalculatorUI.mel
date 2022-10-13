@@ -1,13 +1,13 @@
 global proc float Addition()
 {
-    string $Num1 = optionVar -q "firstNum";
-    string $Num2 = optionVar -q "secNum";
-    string $Num3 = optionVar -q "thirdNum";
-    string $feild3 = optionVar -q "Result";
+    string $Num1 = `optionVar -q "firstNum"`;
+    string $Num2 = `optionVar -q "secNum"`;
+    string $Num3 =  `optionVar -q "thirdNum"`;
+    string $feild3 = `optionVar -q "Result"`;
 
     float $value1 = `floatField -q -value $Num1`;
-    float $value1 = `floatField -q -value $Num2`;
-    float $value1 = `floatField -q -value $Num3`;
+    float $value2 = `floatField -q -value $Num2`;
+    float $value3 = `floatField -q -value $Num3`;
 
     float $sum =  $Num1 + $Num2 + $Num3;
 
@@ -19,20 +19,21 @@ global proc float Addition()
     {
         $sum += $num[$i];
     }
-    return $sum;*/
+    */
+    return $sum;
 }
 
 //Honestly I really don't get this. I just don't understand how to get it to work. I am pretty sure Im overthinking it but I just don't know.
 global proc float Subtract()
 {
-    string $Num1 = optionVar -q "firstNum";
-    string $Num2 = optionVar -q "secNum";
-    string $Num3 = optionVar -q "thirdNum";
-    string $feild3 = optionVar -q "Result";
+    string $Num1 = `optionVar -q "firstNum"`;
+    string $Num2 = `optionVar -q "secNum"`;
+    string $Num3 = `optionVar -q "thirdNum"`;
+    string $feild3 = `optionVar -q "Result"`;
 
     float $value1 = `floatField -q -value $Num1`;
-    float $value1 = `floatField -q -value $Num2`;
-    float $value1 = `floatField -q -value $Num3`;
+    float $value2 = `floatField -q -value $Num2`;
+    float $value3 = `floatField -q -value $Num3`;
     
     float $dif =  $Num1 - $Num2 - $Num3;
 
@@ -43,20 +44,20 @@ global proc float Subtract()
     {
         $dif -= $num[$i];
     }
-    return $dif;*/
-
+    */
+return $dif;
 }
 
 global proc float Division()
 {
-    string $Num1 = optionVar -q "firstNum";
-    string $Num2 = optionVar -q "secNum";
-    string $Num3 = optionVar -q "thirdNum";
-    string $feild3 = optionVar -q "Result";
+    string $Num1 = `optionVar -q "firstNum"`;
+    string $Num2 = `optionVar -q "secNum"`;
+    string $Num3 = `optionVar -q "thirdNum"`;
+    string $feild3 = `optionVar -q "Result"`;
 
     float $value1 = `floatField -q -value $Num1`;
-    float $value1 = `floatField -q -value $Num2`;
-    float $value1 = `floatField -q -value $Num3`;
+    float $value2 = `floatField -q -value $Num2`;
+    float $value3 = `floatField -q -value $Num3`;
     
     float $div =  $Num1 / $Num2 / $Num3;
 
@@ -67,19 +68,20 @@ global proc float Division()
     {
         $div /= $num[$i];
     }
-    return $div;*/
+   */
+    return $div;
 }
 
 global proc float Multiplication()
 {
-    string $Num1 = optionVar -q "firstNum";
-    string $Num2 = optionVar -q "secNum";
-    string $Num3 = optionVar -q "thirdNum";
-    string $feild3 = optionVar -q "Result";
+    string $Num1 = `optionVar -q "firstNum"`;
+    string $Num2 = `optionVar -q "secNum"`;
+    string $Num3 = `optionVar -q "thirdNum"`;
+    string $feild3 = `optionVar -q "Result"`;
 
     float $value1 = `floatField -q -value $Num1`;
-    float $value1 = `floatField -q -value $Num2`;
-    float $value1 = `floatField -q -value $Num3`;
+    float $value2 = `floatField -q -value $Num2`;
+    float $value3 = `floatField -q -value $Num3`;
     
     float $sum =  $Num1 * $Num2 * $Num3;
 
@@ -89,8 +91,8 @@ global proc float Multiplication()
     for($i=1; $i < size($num); $i ++)
     {
         $multi *= $num[$i];
-    }
-    return $multi;*/
+    }*/
+    return $multi;
 }
 
 global proc float Power(float $num[])
@@ -102,14 +104,14 @@ global proc float Power(float $num[])
 
 global proc float Mean(float $num[])
 {
-    string $Num1 = optionVar -q "firstNum";
-    string $Num2 = optionVar -q "secNum";
-    string $Num3 = optionVar -q "thirdNum";
-    string $feild3 = optionVar -q "Result";
+    string $Num1 = `optionVar -q "firstNum"`;
+    string $Num2 = `optionVar -q "secNum"`;
+    string $Num3 = `optionVar -q "thirdNum"`;
+    string $feild3 = `optionVar -q "Result"`;
 
     float $value1 = `floatField -q -value $Num1`;
-    float $value1 = `floatField -q -value $Num2`;
-    float $value1 = `floatField -q -value $Num3`;
+    float $value2 = `floatField -q -value $Num2`;
+    float $value3 = `floatField -q -value $Num3`;
     
     float $sum =  $Num1 +  $Num2 +  $Num3;
 
@@ -125,9 +127,9 @@ global proc float Mean(float $num[])
     }
 
     $mean = $sum /= size($num);
-    return $mean;*/
+    */
 // not right just yet.
-
+return $mean;
 }
 /*global proc float Median(float $num[])
 {
@@ -150,7 +152,7 @@ global proc float calculator(float $Input[], int $operation)
 
     if($operation = 1)
     {
-        $result = Addition($Input);
+        $result = Addition($Input1, $Input2, $Input3);
         $operationSymb = "+";
         return $result;
     }
@@ -197,8 +199,14 @@ global proc float calculator(float $Input[], int $operation)
 
 global proc Calc_ButtonCmd()
 {
-    string 
+    string $Num1 = `optionVar -q "firstNum"`;
+    string $Num2 = `optionVar -q "secNum"`;
+    string $Num3 = `optionVar -q  "thirdNum"`;
 
+    //Float access info we input
+    float $Input1 = `floatField -q -value $Num1`;
+    float $Input2 = `floatField -q -value $Num2`;
+    float $Input3 = `floatField -q -value $Num3`;
 
 }
 
@@ -224,6 +232,7 @@ optionVar -stringValue "Result" `floatField -parent $mColumn -editable 0`;
 
 //Text bar where the answer will appear
 optionVar -stringValue "CalcResult" `textField -parent $mColumn -editable 0`;
+
 optionVar -stringValue "Operation" `radioButtonGrp -parent $mColumn -numberOfRadioButtons 4 -labelArray4 "Addition" "Subtraction" "Division" "Multiplication"`;
 //optionVar -stringValue "Operation" `radioButtonGrp -parent $mColumn -numberOfRadioButtons 4 -labelArray4 "Addition" "Subtraction" "Division" "Multiplication"`;
 button -label "Go!" -command "";
