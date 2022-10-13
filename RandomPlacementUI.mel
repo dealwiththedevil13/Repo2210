@@ -1,0 +1,34 @@
+global proc RD_ButtonCmd()
+{
+    //Add selection
+    string $selection[] = `ls -selection`;
+    //Duplicate
+    //Randomize(minX maxX minY)
+    int $maxX = rand(200);
+    int $minY = rand(400);
+    int $minX = rand(10);
+    int $randNum = `rand(size($fortunes)`);
+
+}
+
+
+
+global proc RandomPlacementUI()
+{
+
+string $mWindow = "Random_UI";
+
+if(`window -exsists $mWindow`)
+    deleteUI $mWindow;
+
+$mWindow = `window -height 300
+                    -title "RandomWindow"
+                    -width 400
+                    $mWindow`;
+string $mColumn = `columnLayout -adjustColumn 1
+                                -parent $mWindow`;
+//
+button -parent $mColumn -label "Go!" -command "RD_ButtonCmd"
+}
+
+RandomPlacementUI();
