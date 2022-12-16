@@ -7,9 +7,17 @@ def Sequential_Renamer(string):
     string.partition("##")
     for objNum, object in enumerate(Select):
         cmds.rename(object,string.partition('#')[0] + str(objNum + 1).zfill(string.count('#')) + string.rpartition('#')[2])
+    #for count, object in enumerate(Select)
+       # suffix = '_Jnt'
+       # x = str(1).xfill(0)
+   #txt = "Leg_##_JNT"
+    #count = txt.count("#")
+
+    #if x >0:
+       # x = txt.find("#" * count)
 
 
-Sequential_Renamer("Arm_##_jnt")
+Sequential_Renamer("Arm_###_jnt")
 
 
 
